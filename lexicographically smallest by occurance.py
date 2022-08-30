@@ -19,12 +19,19 @@ def solution(s1, s2):
     i = 0
     j = 0
     while True:
-        if s1.count(s1[i]) < s2.count(s2[i]):
+        if s1.count(s1[i]) < s2.count(s2[j]):
+            new.append(s1[i])
+            i += 1
+        elif s1.count(s1[i]) > s2.count(s2[j]):
+            new.append(s2[j])
+            j += 1
+        elif s1[i] <= s2[j]:
             new.append(s1[i])
             i += 1
         else:
             new.append(s2[j])
             j += 1
+            
         if i == len(s1):
             rem = s2[j:]
             new.extend(rem)
