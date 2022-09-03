@@ -27,10 +27,12 @@ For s = "", the output should be solution(s) = "".
 def solution(s):
     for i in range(1,len(s)):
         sub = s[:i+1]
-        if sub == sub[::-1]:
+        if i == len(s)-1 and sub == sub[::-1]:
+            s = s.replace(sub, '')
+        elif sub == sub[::-1]:
             continue
         else:
             old_sub = s[:i]
             if old_sub == old_sub[::-1] and len(old_sub) > 1:
                 s = s.replace(old_sub, '')
-    return s  
+    return s

@@ -23,3 +23,17 @@ def solution(numbers, left, right):
         else:
             res.append(False)
     return res
+
+
+    '''
+    def solution(numbers, left, right):
+    res = []
+    for i in range(len(numbers)):
+        x = numbers[i] / (i+1)
+        
+        if x.is_integer() and left <= x <= right:
+            res.append(True)
+        else:
+            res.append(False)
+    return res
+    '''
